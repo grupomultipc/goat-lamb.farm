@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crianza de Cabras - San Vicente Pacaya</title>
+<style>
+/* Reset y tipografía */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f4f8; color:#333; line-height:1.6; }
+
+/* Header */
+header { background: linear-gradient(135deg, #4CAF50, #2E7D32); color:white; text-align:center; padding:40px 20px; }
+header h1 { font-size:2.5rem; margin-bottom:10px; }
+header p { font-size:1.2rem; }
+
+/* Navegación */
+nav { background:#1B5E20; display:flex; justify-content:center; flex-wrap:wrap; }
+nav a { color:white; padding:14px 20px; text-decoration:none; font-weight:bold; transition:0.3s; }
+nav a:hover { background:#388E3C; border-radius:5px; }
+
+/* Secciones */
+section { padding:40px 20px; max-width:1200px; margin:auto; }
+h2 { color:#2E7D32; margin-bottom:20px; text-align:center; }
+
+/* Tarjetas */
+.cards-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.card { background:white; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); flex:1; min-width:250px; transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.2); }
+
+/* Galería */
+.gallery { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
+.gallery img { width:200px; border-radius:10px; transition: transform 0.3s; }
+.gallery img:hover { transform: scale(1.05); }
+
+/* Formulario */
+form { background:white; padding:30px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); max-width:600px; margin:auto; }
+form input, form textarea { width:100%; padding:12px; margin:8px 0 15px; border:1px solid #ccc; border-radius:5px; font-size:1rem; }
+form button { background:#4CAF50; color:white; padding:12px 25px; border:none; border-radius:5px; cursor:pointer; font-size:1rem; font-weight:bold; transition:0.3s; }
+form button:hover { background:#388E3C; transform:scale(1.05); }
+
+/* Footer */
+footer { background:#1B5E20; color:white; text-align:center; padding:20px 10px; margin-top:20px; }
+
+/* Botones redes sociales */
+.social-buttons { text-align:center; margin-top:15px; }
+.social-buttons a { display:inline-block; margin:0 10px; text-decoration:none; color:white; background:#2E7D32; padding:10px 15px; border-radius:50px; transition:0.3s; }
+.social-buttons a:hover { background:#4CAF50; transform:scale(1.1); }
+
+/* Blog lista */
+ul { list-style-type:none; padding-left:0; }
+ul li { background:white; padding:15px; border-radius:10px; margin-bottom:10px; box-shadow:0 4px 8px rgba(0,0,0,0.05); }
+
+/* Responsive */
+@media(max-width:768px) {
+    .cards-container { flex-direction:column; }
+    .gallery img { width:100%; max-width:300px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Crianza de Cabras - San Vicente Pacaya</h1>
+    <p>Mejorando la vida de nuestra comunidad a través de la ganadería caprina</p>
+</header>
+
+<nav>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#guia">Guía</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#blog">Blog</a>
+</nav>
+
+<section id="beneficios">
+    <h2>¿Por qué criar cabras?</h2>
+    <ul>
+        <li>Fuente de ingresos con leche, carne y derivados.</li>
+        <li>Adaptabilidad al clima y terreno local.</li>
+        <li>Bajo costo de mantenimiento comparado con otros animales.</li>
+        <li>Producción de fertilizante natural para cultivos.</li>
+    </ul>
+</section>
+
+<section id="guia">
+    <h2>Guía práctica de crianza</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>Selección de razas</h3>
+            <p>Saanen, Boer y mestizas locales adaptadas al clima de San Vicente Pacaya.</p>
+        </div>
+        <div class="card">
+            <h3>Infraestructura</h3>
+            <p>Corrales ventilados, sombra, agua limpia y comederos adecuados.</p>
+        </div>
+        <div class="card">
+            <h3>Alimentación y salud</h3>
+            <p>Hierbas, forrajes y concentrados; vacunación y desparasitación periódica.</p>
+        </div>
+        <div class="card">
+            <h3>Reproducción</h3>
+            <p>Manejo de ciclo reproductivo y crías para mantener un hato saludable.</p>
+        </div>
+    </div>
+</section>
+
+<section id="testimonios">
+    <h2>Testimonios locales</h2>
+    <div class="cards-container">
+        <div class="card">
+            <p>"Gracias a la crianza de cabras mejoramos nuestros ingresos y alimentación familiar." - Juan P.</p>
+        </div>
+        <div class="card">
+            <p>"Con pequeños cambios en manejo y alimentación, nuestras cabras son más productivas." - María L.</p>
+        </div>
+    </div>
+</section>
+
+<section id="recursos">
+    <h2>Recursos y apoyo</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>Asociaciones locales</h3>
+            <p>Cooperativa de Ganaderos de Escuintla: contacto@ganaderosesc.com</p>
+        </div>
+        <div class="card">
+            <h3>Programas gubernamentales</h3>
+            <p>Ministerio de Agricultura: apoyo y capacitación en ganadería caprina.</p>
+        </div>
+        <div class="card">
+            <h3>Material educativo</h3>
+            <p>Guías, videos y artículos disponibles en línea.</p>
+        </div>
+    </div>
+</section>
+
+<section id="galeria">
+    <h2>Galería de fotos</h2>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/200x150?text=Cabra+1" alt="Cabra 1">
+        <img src="https://via.placeholder.com/200x150?text=Cabra+2" alt="Cabra 2">
+        <img src="https://via.placeholder.com/200x150?text=Granjas" alt="Granjas">
+        <img src="https://via.placeholder.com/200x150?text=Crías" alt="Crías">
+    </div>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <form action="#" method="post">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="mensaje" placeholder="Escribe tu mensaje" rows="5" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+    </form>
+    <div class="social-buttons">
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">WhatsApp</a>
+    </div>
+</section>
+
+<section id="blog">
+    <h2>Blog y noticias</h2>
+    <ul>
+        <li>Capacitación sobre manejo sanitario de cabras: 12 de septiembre.</li>
+        <li>Feria de productos caprinos locales: 25 de octubre.</li>
+        <li>Consejos de alimentación en temporada seca.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2025 Crianza de Cabras - San Vicente Pacaya | Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
