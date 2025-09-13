@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crianza de Cabras y Corderos - San Vicente Pacaya</title>
+<style>
+/* Reset y tipografía */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f4f8; color:#333; line-height:1.6; }
+
+/* Header con imagen de fondo */
+header { 
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('goat-header.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white; 
+    text-align: center; 
+    padding: 80px 20px;
+    position: relative;
+}
+header h1 { 
+    font-size: 2.8rem; 
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+header p { 
+    font-size: 1.3rem; 
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Navegación */
+nav { 
+    background: rgba(27, 94, 32, 0.95); 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+nav a { 
+    color: white; 
+    padding: 14px 20px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.3s; 
+}
+nav a:hover { 
+    background: #388E3C; 
+    border-radius: 5px; 
+    transform: translateY(-3px);
+}
+
+/* Secciones */
+section { 
+    padding: 60px 20px; 
+    max-width: 1200px; 
+    margin: auto; 
+}
+h2 { 
+    color: #2E7D32; 
+    margin-bottom: 30px; 
+    text-align: center; 
+    font-size: 2.2rem;
+    position: relative;
+}
+h2:after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #4CAF50;
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Tarjetas */
+.cards-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 25px; 
+    justify-content: center; 
+}
+.card { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); 
+    flex: 1; 
+    min-width: 250px; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    border-top: 5px solid #4CAF50;
+}
+.card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15); 
+}
+
+/* Galería */
+.gallery { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+    margin-top: 30px;
+}
+.gallery img { 
+    width: 200px; 
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px; 
+    transition: transform 0.3s; 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.gallery img:hover { 
+    transform: scale(1.08); 
+}
+
+/* Formulario */
+form { 
+    background: white; 
+    padding: 35px; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+    max-width: 650px; 
+    margin: auto; 
+}
+form input, form textarea { 
+    width: 100%; 
+    padding: 14px; 
+    margin: 10px 0 18px; 
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    font-size: 1rem; 
+    transition: border-color 0.3s;
+}
+form input:focus, form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+form button { 
+    background: #4CAF50; 
+    color: white; 
+    padding: 14px 28px; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    display: block;
+    margin: 20px auto 0;
+}
+form button:hover { 
+    background: #388E3C; 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer { 
+    background: #1B5E20; 
+    color: white; 
+    text-align: center; 
+    padding: 30px 10px; 
+    margin-top: 40px; 
+}
+
+/* Botones redes sociales */
+.social-buttons { 
+    text-align: center; 
+    margin-top: 20px; 
+}
+.social-buttons a { 
+    display: inline-block; 
+    margin: 0 12px; 
+    text-decoration: none; 
+    color: white; 
+    background: #2E7D32; 
+    padding: 12px 20px; 
+    border-radius: 50px; 
+    transition: 0.3s; 
+    font-weight: bold;
+}
+.social-buttons a:hover { 
+    background: #4CAF50; 
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Blog lista */
+ul { 
+    list-style-type: none; 
+    padding-left: 0; 
+}
+ul li { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    border-left: 4px solid #4CAF50;
+    transition: transform 0.3s;
+}
+ul li:hover {
+    transform: translateX(5px);
+}
+
+/* Foto destacada */
+.goat-featured {
+    width: 100%;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+.goat-featured img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease;
+}
+
+.goat-featured img:hover {
+    transform: scale(1.02);
+}
+
+.goat-featured .caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Efecto de marco natural */
+.natural-frame {
+    padding: 20px;
+    background: linear-gradient(to bottom, #8BC34A, #4CAF50);
+    border-radius: 20px;
+    position: relative;
+}
+
+.natural-frame:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+/* Mejoras de diseño general */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FF9800;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background: #F57C00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Sección de animales */
+.animal-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0;
+    align-items: center;
+}
+
+.animal-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.animal-images {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.animal-images img {
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.animal-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:768px) {
+    .cards-container { flex-direction: column; }
+    .gallery img { width: 100%; max-width: 300px; }
+    .natural-frame { padding: 10px; }
+    header h1 { font-size: 2.2rem; }
+    header p { font-size: 1.1rem; }
+    nav { flex-direction: column; text-align: center; }
+    nav a { margin: 5px 0; }
+    .animal-section { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Crianza de Cabras y Corderos - Parque Ecológico los Cipreses</h1>
+        <p>Mejorando la vida de nuestra comunidad a través de la ganadería sostenible</p>
+        <a href="#contacto" class="cta-button">¡Contáctanos!</a>
+    </div>
+</header>
+
+<nav>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#cabras">Cabras</a>
+    <a href="#corderos">Corderos</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<section id="beneficios">
+    <div class="container">
+        <h2>¿Por qué criar cabras y corderos?</h2>
+        <ul>
+            <li>Fuente de ingresos con leche, carne, lana y derivados.</li>
+            <li>Adaptabilidad al clima y terreno local.</li>
+            <li>Bajo costo de mantenimiento comparado con otros animales.</li>
+            <li>Producción de fertilizante natural para cultivos.</li>
+            <li>Contribución a la seguridad alimentaria de la familia.</li>
+            <li>Bajo impacto ambiental en comparación con otras ganaderías.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="cabras">
+    <div class="container">
+        <h2>Nuestras Cabras</h2>
+        <div class="animal-section">
+            <div class="animal-content">
+                <p>Las cabras son animales versátiles que se adaptan perfectamente al entorno del Volcán Pacaya. Producen leche rica en nutrientes, carne de alta calidad y son excelentes para el control de vegetación.</p>
+                <p>En nuestro parque ecológico, criamos variedades como:</p>
+                <ul>
+                    <li>Cabra Saanen - Excelente producción lechera</li>
+                    <li>Cabra Boer - Ideal para producción de carne</li>
+                    <li>Criollas locales - Adaptadas al clima</li>
+                </ul>
+            </div>
+            <div class="animal-images">
+                <img src="img-cabra-1.jpg" alt="Cabra con crías">
+                <img src="img-cabra-2.jpg" alt="Cabra en el campo">
+                <img src="img-cabra-3.jpg" alt="Cabra produciendo leche">
+                <img src="img-cabra-4.jpg" alt="Cabra siendo ordeñada">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="corderos">
+    <div class="container">
+        <h2>Nuestros Corderos</h2>
+        <div class="animal-section">
+            <div class="animal-content">
+                <p>Los corderos son una excelente adición a cualquier granja sostenible. Proporcionan carne de alta calidad, lana para artesanías y son fáciles de cuidar en nuestro entorno.</p>
+                <p>Ventajas de criar corderos:</p>
+                <ul>
+                    <li>Rápido crecimiento y reproducción</li>
+                    <li>Bajos requerimientos de espacio</li>
+                    <li>Mercado estable para carne y lana</li>
+                    <li>Fácil integración con otros animales</li>
+                </ul>
+            </div>
+            <div class="animal-images">
+                <img src="img-cordero-1.jpg" alt="Corderos en el campo">
+                <img src="img-cordero-2.jpg" alt="Corderos pastando">
+                <img src="img-cordero-3.jpg" alt="Corderos jóvenes">
+                <img src="img-cordero-4.jpg" alt="Corderos en manada">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonios">
+    <div class="container">
+        <h2>Testimonios locales</h2>
+        <div class="cards-container">
+            <div class="card">
+                <p>"Gracias a la crianza de cabras mejoramos nuestros ingresos y alimentación familiar. Ahora tenemos leche todos los días para nuestros hijos." - Juan P.</p>
+            </div>
+            <div class="card">
+                <p>"Los corderos son una inversión excelente. En poco tiempo tenemos retorno y la lana nos da ingresos adicionales." - María L.</p>
+            </div>
+            <div class="card">
+                <p>"La venta de quesos y derivados nos ha permitido ampliar nuestro negocio familiar. Las cabras son el sustento de nuestra casa." - Roberto M.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="galeria">
+    <div class="container">
+        <h2>Galería de fotos</h2>
+        <div class="gallery">
+            <img src="img-cabra-1.jpg" alt="Cabra con crías">
+            <img src="img-cabra-2.jpg" alt="Cabra en el campo">
+            <img src="img-cabra-3.jpg" alt="Producción de queso de cabra">
+            <img src="img-cabra-4.jpg" alt="Ordeño de cabras">
+            <img src="img-cordero-1.jpg" alt="Corderos pastando">
+            <img src="img-cordero-2.jpg" alt="Corderos jóvenes">
+            <img src="img-cordero-3.jpg" alt="Corderos en el campo">
+            <img src="img-cordero-4.jpg" alt="Corderos en manada">
+        </div>
+    </div>
+</section>
+
+<section id="contacto">
+    <div class="container">
+        <h2>Contacto</h2>
+        <form action="#" method="post">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="tel" name="telefono" placeholder="Teléfono (opcional)">
+            <textarea name="mensaje" placeholder="Escribe tu mensaje, interés o consulta" rows="5" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+        <div class="social-buttons">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">WhatsApp</a>
+            <a href="#" target="_blank">YouTube</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Crianza de Cabras y Corderos - Parque Ecológico los Cipreses, Volcán Pacaya</p>
+        <p>Teléfono: (502) 7889-4500 | Email: info@crianza-pacaya.org</p>
+        <p>San Vicente Pacaya, Escuintla, Guatemala</p>
+    </div>
+</footer>
+
+</body>
+</html>
